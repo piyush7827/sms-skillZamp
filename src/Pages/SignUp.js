@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./signUp.css";
 import signupimage from "../images/signupimage.jpg";
+import { Link } from "react-router-dom";
 const ROLES = {
   PARENT: "PARENT",
   TEACHER: "TEACHER",
@@ -80,7 +81,10 @@ const Signup = () => {
               value="Create"
             />
           </div>
-          <div>Already have an account? Login</div>
+          <span>
+            Already have an account?
+            <Link to="/login">Login</Link>
+          </span>
         </form>
       </div>
     </div>
