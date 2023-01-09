@@ -29,7 +29,7 @@ function Login() {
   const [userType, setUserType] = useState("PARENT");
   const [error, setError] = useState(false);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const signupFn = (e) => {
     const data = {
@@ -47,6 +47,7 @@ function Login() {
     userSignup(data)
       .then(function (response) {
         if (response.status === 201) {
+          // window.location.href="/"
           setShowSignup(false);
           clearState();
           setError(false);
@@ -142,49 +143,48 @@ function Login() {
               <h1>Welcome !</h1>
               <span className="sign-tag">Sign in to your account</span>
             </div>
-            <div className="user-details">
-              <div className="username">
-                <input
-                  className="user-input"
-                  type="text"
-                  placeholder="Enter your username"
-                  onChange={updateSignupData}
-                />
-                <img className="user-img" src={user} alt="user" />
+            <form onSubmit={loginFn}>
+              <div className="user-details">
+                <div className="username">
+                  <input
+                    className="user-input"
+                    type="text"
+                    placeholder="Enter your username"
+                    id="userId"
+                    onChange={updateSignupData}
+                    required
+                  />
+                  <img className="user-img" src={user} alt="user" />
+                </div>
+                <div className="username">
+                  <input
+                    className="user-input"
+                    type="password"
+                    placeholder="Enter your password"
+                    id="password"
+                    onChange={updateSignupData}
+                    required
+                  />
+                  <img className="user-img" src={pass} alt="user" />
+                </div>
+                <div className="manage-account">
+                  <input className="checkbox" type="checkbox" />
+                  <span className="me">Remember me?</span>
+                  <span className="forgot">Forgot password?</span>
+                </div>
               </div>
-              <div className="username">
-                <input
-                  className="user-input"
-                  type="password"
-                  placeholder="Enter your password"
-                  onChange={updateSignupData}
-                />
-                <img className="user-img" src={pass} alt="user" />
+              <button className="btn-submit">Login</button>
+
+              <div className="no-account" onClick={toggleSignup}>
+                {" "}
+                Don't have account?{" "}
+                <span style={{ color: "GREEN", cursor: "pointer" }}>
+                  SIGN UP
+                </span>
               </div>
-              <div className="manage-account">
-                <input className="checkbox" type="checkbox" />
-                <span className="me">Remember me?</span>
-                <span className="forgot">Forgot password?</span>
-              </div>
-            </div>
-            <button className="btn-submit">
-              <Link
-                to="/admin"
-                style={{
-                  textDecoration: "none",
-                  background: "none",
-                  color: "white",
-                }}
-              >
-                Login
-              </Link>
-            </button>
-            <div className="no-account" onClick={toggleSignup}>
-              {" "}
-              Don't have account?{" "}
-              <span style={{ color: "GREEN", cursor: "pointer" }}>SIGN UP</span>
-            </div>
-            <div className="text-danger text-center">{message}</div>
+
+              <div className="text-danger text-center">{message}</div>
+            </form>
           </div>
         </div>
       ) : (
@@ -202,6 +202,7 @@ function Login() {
                   className="form-control m-1"
                   id="userId"
                   onChange={updateSignupData}
+                  required
                 />
               </div>
               <div className="input-group">
@@ -211,6 +212,7 @@ function Login() {
                   className="form-control m-1"
                   id="password"
                   onChange={updateSignupData}
+                  required
                 />
               </div>
               <div className="input-group">
@@ -220,6 +222,7 @@ function Login() {
                   className="form-control m-1"
                   id="username"
                   onChange={updateSignupData}
+                  required
                 />
               </div>
               <div className="input-group">
@@ -229,6 +232,7 @@ function Login() {
                   className="form-control m-1"
                   id="email"
                   onChange={updateSignupData}
+                  required
                 />
               </div>
               <div className="col d-flex justify-content-center align-items-center">
@@ -254,11 +258,12 @@ function Login() {
               </div>
 
               <div>
-                <input
+                <button
                   type="submit"
                   className="form-control m-1 btn btn-primary"
-                  value="Create"
-                />
+                >
+                  Create
+                </button>
               </div>
               <span onClick={toggleSignup}>
                 Already have an account?{" "}

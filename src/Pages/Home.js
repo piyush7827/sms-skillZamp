@@ -9,24 +9,36 @@ function Home() {
   // };
   return (
     <div>
-      <Link
-        to="/login"
-        style={{
-          position: "absolute",
-          marginLeft: "648px",
-          marginTop: "300px",
-          border: "5px solid cyan",
-          background: "cyan",
-          color: "darkred",
-          fontWeight: "700",
-          borderRadius: "10px",
-          textDecoration: "none",
-        }}
-      >
-        Click Me
-      </Link>
+      <div>
+        <Link
+          to="/login"
+          style={{
+            position: "absolute",
+            display: "flex",
+            width: "8vw",
 
-      <img src={bg1} alt="main" style={{ height: "100vh", width: "100vw" }} />
+            marginTop: "20.5rem",
+            marginLeft: "43.8rem",
+
+            justifyContent: "center",
+            alignItems: "center",
+
+            // marginLeft: "648px",
+            // marginTop: "300px",
+            border: "5px solid cyan",
+            background: "cyan",
+            color: "darkred",
+            fontWeight: "700",
+            borderRadius: "10px",
+            textDecoration: "none",
+          }}
+        >
+          Click Me
+        </Link>
+      </div>
+      <div>
+        <img src={bg1} alt="main" style={{ height: "100vh", width: "100vw" }} />
+      </div>
     </div>
   );
 }
