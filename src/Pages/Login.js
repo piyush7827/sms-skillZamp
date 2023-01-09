@@ -12,12 +12,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import signupimage from "../images/signupimage.jpg";
 import { userSignup, userSignin } from "../Api/auth";
 
-const ROLES = {
-  PARENT: "PARENT",
-  TEACHER: "TEACHER",
-  STUDENT: "STUDENT",
-};
-
 function Login() {
   const [showSignup, setShowSignup] = useState(false);
   const [message, setMessage] = useState("");
@@ -245,15 +239,9 @@ function Login() {
                   variant="success"
                   onSelect={handleSelect}
                 >
-                  <Dropdown.Item eventKey={ROLES.PARENT}>
-                    {ROLES.PARENT}
-                  </Dropdown.Item>
-                  <Dropdown.Item eventKey={ROLES.STUDENT}>
-                    {ROLES.STUDENT}
-                  </Dropdown.Item>
-                  <Dropdown.Item eventKey={ROLES.TEACHER}>
-                    {ROLES.TEACHER}
-                  </Dropdown.Item>
+                  <Dropdown.Item eventKey="PARENT">PARENT</Dropdown.Item>
+                  <Dropdown.Item eventKey="STUDENT">STUDENT</Dropdown.Item>
+                  <Dropdown.Item eventKey="TEACHER">TEACHER</Dropdown.Item>
                 </DropdownButton>
               </div>
 

@@ -3,10 +3,6 @@ import { Link } from "react-router-dom";
 import bg1 from "../images/bg1.png";
 
 function Home() {
-  // const navigate = useNavigate();
-  // const handleLogin = () => {
-  //   navigate("/login");
-  // };
   return (
     <div>
       <div>
@@ -23,8 +19,6 @@ function Home() {
             justifyContent: "center",
             alignItems: "center",
 
-            // marginLeft: "648px",
-            // marginTop: "300px",
             border: "5px solid cyan",
             background: "cyan",
             color: "darkred",

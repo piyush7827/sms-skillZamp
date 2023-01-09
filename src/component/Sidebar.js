@@ -1,22 +1,21 @@
 import { CSidebar, CSidebarNav, CNavItem, CNavTitle } from "@coreui/react";
-// import { isDisabled } from "@testing-library/user-event/dist/utils";
+
 import { Link } from "react-router-dom";
-// import { CIcon, CBadge } from "@coreui/react/dist/components";
 
 function Sidebar() {
   const backToLogin = () => {
     localStorage.clear();
-    window.location.href = "/";
+    window.location.href = "/login";
   };
 
   return (
     <CSidebar unfoldable className="bg-black vh-100">
       <CSidebarNav>
         <CNavItem className="bg-dark text-center d-flex">
-          <i className="bi bi-bar-chart-fill m-2"></i>
-          <h5 className="mx-5 my-1 fw-bolder">TETHERX</h5>
+          <i className="bi bi-bar-chart-fill m-4"></i>
+          <h5 className="mx-5 my-1 fw-bolder">School Management System</h5>
         </CNavItem>
-        <CNavTitle className="">A CRM App for all your needs...</CNavTitle>
+        <CNavTitle className="">A SMS App for all your needs...</CNavTitle>
         <CNavItem className="d-flex">
           <i className="bi bi-box-arrow-left m-2"></i>
           <Link to="/login" className="text-decoration-none">
@@ -29,8 +28,6 @@ function Sidebar() {
             Logout
           </span>
         </CNavItem>
-
-        {/* {usertype && ()} */}
       </CSidebarNav>
     </CSidebar>
   );
