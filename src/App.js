@@ -16,6 +16,7 @@ import Unauthorized from "./component/Unauthorized";
 import Parent from "./Pages/utils/Parent";
 import Teacher from "./Pages/utils/Teacher";
 import Student from "./Pages/utils/Student";
+import Forgot from "./Pages/Forgot";
 
 const ROLES = {
   PARENT: "PARENT",
@@ -29,6 +30,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} exact />
+          <Route path="/forgot" element={<Forgot />} exact />
           <Route
             path="/Login"
             element={

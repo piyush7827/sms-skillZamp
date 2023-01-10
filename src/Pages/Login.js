@@ -123,6 +123,10 @@ function Login() {
     setUserName("");
     setUserEmail("");
   };
+  const nav = useNavigate()
+  const gotoForgot = () =>{
+    nav("/forgot")
+  }
 
   return (
     <div>
@@ -164,7 +168,7 @@ function Login() {
                 <div className="manage-account">
                   <input className="checkbox" type="checkbox" />
                   <span className="me">Remember me?</span>
-                  <span className="forgot">Forgot password?</span>
+                  <span className="forgot" onClick={gotoForgot}>Forgot password?</span>
                 </div>
               </div>
               <button className="btn-submit">Login</button>
